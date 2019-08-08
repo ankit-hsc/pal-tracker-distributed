@@ -20,7 +20,6 @@ jobs:
       install: skip
       before_script:
         - mysql -uroot < databases/create_databases.sql
-        - ./gradlew testMigrate
       script:
         - APPLICATION=allocations
         - ./gradlew clean :applications:${APPLICATION}-server:build
@@ -43,7 +42,6 @@ jobs:
       install: skip
       before_script:
         - mysql -uroot < databases/create_databases.sql
-        - ./gradlew testMigrate
       script:
         - APPLICATION=backlog
         - ./gradlew clean :applications:${APPLICATION}-server:build
@@ -62,7 +60,6 @@ jobs:
       install: skip
       before_script:
         - mysql -uroot < databases/create_databases.sql
-        - ./gradlew testMigrate
       script:
         - APPLICATION=registration
         - ./gradlew clean :applications:${APPLICATION}-server:build
@@ -81,7 +78,6 @@ jobs:
       install: skip
       before_script:
         - mysql -uroot < databases/create_databases.sql
-        - ./gradlew testMigrate
       script:
         - APPLICATION=timesheets
         - ./gradlew clean :applications:${APPLICATION}-server:build
